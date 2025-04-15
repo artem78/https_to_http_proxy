@@ -8,6 +8,8 @@ Simple proxy to get https pages with http. May be used for old systems or for de
 
 # Usage
 
+## Configure and run proxy
+
 Install python modules
 
 ```
@@ -19,6 +21,21 @@ Run web server
 ```
 python3 https_to_http_proxy.py
 ```
+
+## Or with Docker
+
+```
+docker-compose up --build
+```
+
+or in the background
+
+```
+docker-compose up --build -d
+```
+
+## Test it
+
 
 Make get request with curl
 

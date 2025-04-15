@@ -1,0 +1,11 @@
+version: '3'
+services:
+  https_to_http_proxy_server:
+    build: .
+    container_name: https_to_http_proxy_server
+    environment:
+      - PYTHONUNBUFFERED=True
+    restart: on-failure
+    ports:
+      - "8088:8088"
+    command: python3 /proxy_server/https_to_http_proxy.py
