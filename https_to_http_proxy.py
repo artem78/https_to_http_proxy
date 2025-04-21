@@ -11,7 +11,12 @@ def proxy():
     else:
         #return "url:" + url
         try:
-            r = requests.get(url)
+            headers = {}
+            user_agent = request.headers.get('User-Agent')
+            if user_agent:
+                headers['User-Agent'] = user_agent
+            # todo:what about pass other headers?
+            r = requests.get(url, headers=headers)
         except Exception as e:
             return str(e), 500
         
